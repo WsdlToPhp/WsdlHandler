@@ -11,7 +11,7 @@
 [![StyleCI](https://styleci.io/repos/87977980/shield)](https://styleci.io/repos/87977980)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/6bac01d7-5243-4682-9264-8166407c8a30/mini.png)](https://insight.sensiolabs.com/projects/6bac01d7-5243-4682-9264-8166407c8a30)
 
-WsdlHandler uses the [decorator design pattern](https://en.wikipedia.org/wiki/Decorator_pattern) upon [WsdlHandler](https://github.com/WsdlToPhp/WsdlHandler).
+WsdlHandler uses the [decorator design pattern](https://en.wikipedia.org/wiki/Decorator_pattern) upon [DomHandler](https://github.com/WsdlToPhp/DomHandler).
 
 The source code has been originally created into the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project but it felt that it had the possibility to live by itself and to evolve independtly from the PackageGenerator project if necessary.
 
