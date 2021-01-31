@@ -9,7 +9,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/wsdlhandler/downloads)](https://packagist.org/packages/wsdltophp/wsdlhandler)
 [![StyleCI](https://styleci.io/repos/87977980/shield)](https://styleci.io/repos/87977980)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/6bac01d7-5243-4682-9264-8166407c8a30/mini.png)](https://insight.sensiolabs.com/projects/6bac01d7-5243-4682-9264-8166407c8a30)
+[![SymfonyInsight](https://insight.symfony.com/projects/3dd23426-0808-4715-9a11-e51dc84cb0b4/mini.svg)](https://insight.symfony.com/projects/3dd23426-0808-4715-9a11-e51dc84cb0b4)
 
 WsdlHandler uses the [decorator design pattern](https://en.wikipedia.org/wiki/Decorator_pattern) upon [DomHandler](https://github.com/WsdlToPhp/DomHandler).
 
