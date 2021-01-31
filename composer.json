@@ -1,0 +1,52 @@
+{
+    "name": "wsdltophp/wsdlhandler",
+    "type": "library",
+    "description": "Decorative design pattern to ease WSDL handling",
+    "keywords": [
+        "xml",
+        "dom",
+        "xpath",
+        "php",
+        "wsdl",
+        "xsd"
+    ],
+    "homepage": "https://github.com/WsdlToPhp/WsdlHandler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikaël DELSOL",
+            "email": "contact@wsdltophp.com",
+            "homepage": "https://www.wsdltophp.com",
+            "role": "Owner"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-dom": "*",
+        "wsdltophp/domhandler": "~2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~2.0",
+        "phpunit/phpunit": "^9"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "WsdlToPhp\\WsdlHandler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WsdlToPhp\\WsdlHandler\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose"
+    },
+    "support": {
+        "email": "contact@wsdltophp.com"
+    }
+}
