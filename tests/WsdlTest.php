@@ -124,7 +124,7 @@ final class WsdlTest extends AbstractTestCase
         $this->assertContainsOnlyInstancesOf(TagExtension::class, $extensions);
     }
 
-    public function testGetElementsByNameAndAttributesDomNodeMustReturnTheExtensionsFromTheExternalSchemas()
+    public function testGetElementsByNameAndAttributesUsingDomNodeMustReturnTheExtensionsFromTheExternalSchemas()
     {
         $element = ($instance = self::wsdlVehicleSelectionServiceInstance())->getElementByNameAndAttributes(AbstractDocument::TAG_COMPLEX_TYPE, [
             'name' => 'getHgvPlatformSubModelDataResponse',
@@ -139,6 +139,14 @@ final class WsdlTest extends AbstractTestCase
         $this->assertCount(30, $elements = $instance->getElementsByNameAndAttributes(AbstractDocument::TAG_ELEMENT, [
             'form' => 'qualified',
         ], $fromNode, true));
+        $this->assertContainsOnlyInstancesOf(TagElement::class, $elements);
+    }
+
+    public function testGetElementsByNameAndAttributesMustReturnTheExtensionsFromTheLastExternalSchema()
+    {
+        $this->assertCount(1, $elements = self::wsdlPartnerInstance()->getElementsByNameAndAttributes(AbstractDocument::TAG_ELEMENT, [
+            'name' => 'SimpleIsMemberFaultReason',
+        ], null, true));
         $this->assertContainsOnlyInstancesOf(TagElement::class, $elements);
     }
 }
