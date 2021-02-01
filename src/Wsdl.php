@@ -56,12 +56,11 @@ class Wsdl extends AbstractDocument
             ]);
             /** @var Schema $externalSchema */
             foreach ($this->getExternalSchemas() as $index => $externalSchema) {
-                $nodes = $externalSchema->searchTagsByXpath($name, $attributes, $node);
-                if (!empty($nodes)) {
+                if (0 < ($nodes = $externalSchema->searchTagsByXpath($name, $attributes, $node))->length) {
                     $elements = array_merge($elements, $this->getElementsHandlers($nodes));
-                    break;
                 }
             }
+            $elements = array_unique($elements, SORT_REGULAR);
         } else {
             $elements = $this->useParentMethodAndExternals(__FUNCTION__, [
                 $name,
