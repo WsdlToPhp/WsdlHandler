@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversNothing
+ * @coversDefaultClass
  */
 final class TagEnumerationTest extends AbstractTestCase
 {

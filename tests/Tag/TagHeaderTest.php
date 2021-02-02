@@ -14,7 +14,7 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversNothing
+ * @coversDefaultClass
  */
 final class TagHeaderTest extends AbstractTestCase
 {

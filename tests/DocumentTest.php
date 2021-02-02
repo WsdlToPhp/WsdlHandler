@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Wsdl;
 
 /**
  * @internal
- * @coversNothing
+ * @coversDefaultClass
  */
 final class DocumentTest extends AbstractTestCase
 {

@@ -10,7 +10,7 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversNothing
+ * @coversDefaultClass
  */
 final class TagUnionTest extends AbstractTestCase
 {

@@ -13,7 +13,7 @@ use WsdlToPhp\WsdlHandler\Tag\TagExtension;
 
 /**
  * @internal
- * @coversNothing
+ * @coversDefaultClass
  */
 final class WsdlTest extends AbstractTestCase
 {
