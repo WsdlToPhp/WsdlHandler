@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\TagDocumentation;
 use WsdlToPhp\WsdlHandler\Tag\TagEnumeration;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagDocumentationTest extends AbstractTestCase
 {
     public function testGetSuitableParentMustReturn()

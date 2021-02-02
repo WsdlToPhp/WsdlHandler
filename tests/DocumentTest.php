@@ -9,6 +9,10 @@ use WsdlToPhp\WsdlHandler\Tag\TagComplexType;
 use WsdlToPhp\WsdlHandler\Tag\TagDefinitions;
 use WsdlToPhp\WsdlHandler\Wsdl;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class DocumentTest extends AbstractTestCase
 {
     public function testGetElementByNameFromWsdl()

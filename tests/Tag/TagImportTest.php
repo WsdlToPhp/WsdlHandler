@@ -8,6 +8,10 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 use WsdlToPhp\WsdlHandler\Tag\TagImport;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagImportTest extends AbstractTestCase
 {
     public function testGetLocationAttributeValueMustReturnTheSchemaLocation()
@@ -20,7 +24,7 @@ final class TagImportTest extends AbstractTestCase
         $this->assertContainsOnlyInstancesOf(TagImport::class, $imports);
 
         /**
-         * @var int $index
+         * @var int       $index
          * @var TagImport $import
          */
         foreach ($imports as $index => $import) {

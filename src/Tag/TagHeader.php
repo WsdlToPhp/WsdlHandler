@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler\Tag;
 
-use WsdlToPhp\WsdlHandler\AbstractDocument;
 use WsdlToPhp\DomHandler\AbstractAttributeHandler as Attribute;
+use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagHeader extends AbstractTagOperationElement
 {
@@ -42,6 +42,7 @@ class TagHeader extends AbstractTagOperationElement
     public function getHeaderType(): string
     {
         $part = $this->getPartTag();
+
         return $part instanceof TagPart ? $part->getFinalType() : '';
     }
 
@@ -60,6 +61,11 @@ class TagHeader extends AbstractTagOperationElement
         }
 
         return $namespace;
+    }
+
+    public function getHeaderRequired(): string
+    {
+        return $this->getAttributeRequired() ? self::REQUIRED_HEADER : self::OPTIONAL_HEADER;
     }
 
     protected function getHeaderNamespaceFromPart(): string
@@ -85,10 +91,5 @@ class TagHeader extends AbstractTagOperationElement
         }
 
         return $namespace;
-    }
-
-    public function getHeaderRequired(): string
-    {
-        return $this->getAttributeRequired() ? self::REQUIRED_HEADER : self::OPTIONAL_HEADER;
     }
 }

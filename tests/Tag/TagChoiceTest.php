@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
-use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 use WsdlToPhp\WsdlHandler\Tag\TagChoice;
+use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagChoiceTest extends AbstractTestCase
 {
     public function testGetChildrenElementsTagsMustReturnTheListOfTags()
@@ -41,7 +45,7 @@ final class TagChoiceTest extends AbstractTestCase
      *  <xs:choice maxOccurs="1" minOccurs="0">
      *   <xs:element name="IndexedPageFolderView" type="t:IndexedPageViewType" />
      *   <xs:element name="FractionalPageFolderView" type="t:FractionalPageViewType" />
-     *  </xs:choice>
+     *  </xs:choice>.
      */
     public function testGetChildrenElementsMustReturnDirectChildrenTags()
     {
@@ -93,7 +97,7 @@ final class TagChoiceTest extends AbstractTestCase
      *     </xs:simpleContent>
      *    </xs:complexType>
      *   </xs:element>
-     *  </xs:choice>
+     *  </xs:choice>.
      */
     public function testGetChildrenElementsMustReturnNestedChildrenTags()
     {
@@ -115,62 +119,62 @@ final class TagChoiceTest extends AbstractTestCase
     }
 
     /**
-     * <xs:element name="HotelDescriptiveInfoRS">
-        <xs:annotation>
-         <xs:documentation xml:lang="en">The Hotel Descriptive Info Response is a message used to provide detailed descriptive information about a hotel property.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-         <xs:choice>
-          <xs:sequence>
-           <xs:element name="Success" type="whlsoap:SuccessType">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">The presence of the empty Success element explicitly indicates that the OpenTravel message succeeded.</xs:documentation>
-            </xs:annotation>
-           </xs:element>
-           <xs:element name="Warnings" type="whlsoap:WarningsType" minOccurs="0">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">Used in conjunction with the Success element to define one or more business errors.</xs:documentation>
-            </xs:annotation>
-           </xs:element>
-           <xs:element name="HotelDescriptiveContents" minOccurs="0">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">A collection of hotel descriptive information.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-             <xs:sequence>
-              <xs:element name="HotelDescriptiveContent" maxOccurs="unbounded">
-               <xs:annotation>
-                <xs:documentation xml:lang="en">Hotel descriptive information.</xs:documentation>
-               </xs:annotation>
-               <xs:complexType>
-                <xs:complexContent>
-                 <xs:extension base="whlsoap:HotelDescriptiveContentType">
-                  <xs:attributeGroup ref="whlsoap:HotelReferenceGroup">
-                   <xs:annotation>
-                    <xs:documentation xml:lang="en">Used to identify the specific hotel.</xs:documentation>
-                   </xs:annotation>
-                  </xs:attributeGroup>
-                 </xs:extension>
-                </xs:complexContent>
-               </xs:complexType>
-              </xs:element>
-             </xs:sequence>
-            </xs:complexType>
-           </xs:element>
-          </xs:sequence>
-          <xs:element name="Errors" type="whlsoap:ErrorsType">
-           <xs:annotation>
-            <xs:documentation xml:lang="en">Errors are returned if the request was unable to be processed.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-         </xs:choice>
-         <xs:attributeGroup ref="whlsoap:OTA_PayloadStdAttributes">
-          <xs:annotation>
-           <xs:documentation xml:lang="en">This element defines standard attributes that appear on the root element for all OpenTravel Messages.</xs:documentation>
-          </xs:annotation>
-         </xs:attributeGroup>
-        </xs:complexType>
-       </xs:element>
+     * <xs:element name="HotelDescriptiveInfoRS">.
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">The Hotel Descriptive Info Response is a message used to provide detailed descriptive information about a hotel property.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:choice>
+     * <xs:sequence>
+     * <xs:element name="Success" type="whlsoap:SuccessType">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">The presence of the empty Success element explicitly indicates that the OpenTravel message succeeded.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * <xs:element name="Warnings" type="whlsoap:WarningsType" minOccurs="0">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Used in conjunction with the Success element to define one or more business errors.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * <xs:element name="HotelDescriptiveContents" minOccurs="0">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">A collection of hotel descriptive information.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:sequence>
+     * <xs:element name="HotelDescriptiveContent" maxOccurs="unbounded">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Hotel descriptive information.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:complexContent>
+     * <xs:extension base="whlsoap:HotelDescriptiveContentType">
+     * <xs:attributeGroup ref="whlsoap:HotelReferenceGroup">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Used to identify the specific hotel.</xs:documentation>
+     * </xs:annotation>
+     * </xs:attributeGroup>
+     * </xs:extension>
+     * </xs:complexContent>
+     * </xs:complexType>
+     * </xs:element>
+     * </xs:sequence>
+     * </xs:complexType>
+     * </xs:element>
+     * </xs:sequence>
+     * <xs:element name="Errors" type="whlsoap:ErrorsType">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Errors are returned if the request was unable to be processed.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * </xs:choice>
+     * <xs:attributeGroup ref="whlsoap:OTA_PayloadStdAttributes">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">This element defines standard attributes that appear on the root element for all OpenTravel Messages.</xs:documentation>
+     * </xs:annotation>
+     * </xs:attributeGroup>
+     * </xs:complexType>
+     * </xs:element>
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelDescriptiveInfoRs()
     {
@@ -191,62 +195,62 @@ final class TagChoiceTest extends AbstractTestCase
     }
 
     /**
-     * <xs:element name="HotelAvailRS">
-        <xs:annotation>
-         <xs:documentation xml:lang="en">Returns information about hotel availability that meet the requested criteria.</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-         <xs:choice>
-          <xs:sequence>
-           <xs:element name="Success" type="whlsoap:SuccessType">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">The presence of the empty Success element explicitly indicates that the request message was successful.</xs:documentation>
-            </xs:annotation>
-           </xs:element>
-           <xs:element name="Warnings" type="whlsoap:WarningsType" minOccurs="0">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">Used in conjunction with the Success element to define one or more business errors.</xs:documentation>
-            </xs:annotation>
-           </xs:element>
-           <xs:element name="RoomStays" minOccurs="0">
-            <xs:annotation>
-             <xs:documentation xml:lang="en">A collection of details on the Room Stay including Guest Counts, Time Span of this Room Stay, and financial information related to the Room Stay, including Guarantee, Deposit and Payment and Cancellation Penalties.</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-             <xs:sequence>
-              <xs:element name="RoomStay" maxOccurs="unbounded">
-               <xs:annotation>
-                <xs:documentation xml:lang="en">Details on the Room Stay including Guest Counts, Time Span of this Room Stay, and financial information related to the Room Stay, including Guarantee, Deposit and Payment and Cancellation Penalties.</xs:documentation>
-               </xs:annotation>
-               <xs:complexType>
-                <xs:complexContent>
-                 <xs:extension base="whlsoap:RoomStayType">
-                  <xs:attribute name="AvailabilityStatus" type="whlsoap:RateIndicatorType" use="optional">
-                   <xs:annotation>
-                    <xs:documentation xml:lang="en">Used to specify an availability status at the room stay level for a property.</xs:documentation>
-                   </xs:annotation>
-                  </xs:attribute>
-                 </xs:extension>
-                </xs:complexContent>
-               </xs:complexType>
-              </xs:element>
-             </xs:sequence>
-            </xs:complexType>
-           </xs:element>
-          </xs:sequence>
-          <xs:element name="Errors" type="whlsoap:ErrorsType">
-           <xs:annotation>
-            <xs:documentation xml:lang="en">Errors are returned if the request was unable to be processed.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-         </xs:choice>
-         <xs:attributeGroup ref="whlsoap:OTA_PayloadStdAttributes">
-          <xs:annotation>
-           <xs:documentation xml:lang="en">This element defines standard attributes that appear on the root element for all OpenTravel Messages.</xs:documentation>
-          </xs:annotation>
-         </xs:attributeGroup>
-        </xs:complexType>
-       </xs:element>
+     * <xs:element name="HotelAvailRS">.
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Returns information about hotel availability that meet the requested criteria.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:choice>
+     * <xs:sequence>
+     * <xs:element name="Success" type="whlsoap:SuccessType">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">The presence of the empty Success element explicitly indicates that the request message was successful.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * <xs:element name="Warnings" type="whlsoap:WarningsType" minOccurs="0">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Used in conjunction with the Success element to define one or more business errors.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * <xs:element name="RoomStays" minOccurs="0">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">A collection of details on the Room Stay including Guest Counts, Time Span of this Room Stay, and financial information related to the Room Stay, including Guarantee, Deposit and Payment and Cancellation Penalties.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:sequence>
+     * <xs:element name="RoomStay" maxOccurs="unbounded">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Details on the Room Stay including Guest Counts, Time Span of this Room Stay, and financial information related to the Room Stay, including Guarantee, Deposit and Payment and Cancellation Penalties.</xs:documentation>
+     * </xs:annotation>
+     * <xs:complexType>
+     * <xs:complexContent>
+     * <xs:extension base="whlsoap:RoomStayType">
+     * <xs:attribute name="AvailabilityStatus" type="whlsoap:RateIndicatorType" use="optional">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Used to specify an availability status at the room stay level for a property.</xs:documentation>
+     * </xs:annotation>
+     * </xs:attribute>
+     * </xs:extension>
+     * </xs:complexContent>
+     * </xs:complexType>
+     * </xs:element>
+     * </xs:sequence>
+     * </xs:complexType>
+     * </xs:element>
+     * </xs:sequence>
+     * <xs:element name="Errors" type="whlsoap:ErrorsType">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">Errors are returned if the request was unable to be processed.</xs:documentation>
+     * </xs:annotation>
+     * </xs:element>
+     * </xs:choice>
+     * <xs:attributeGroup ref="whlsoap:OTA_PayloadStdAttributes">
+     * <xs:annotation>
+     * <xs:documentation xml:lang="en">This element defines standard attributes that appear on the root element for all OpenTravel Messages.</xs:documentation>
+     * </xs:annotation>
+     * </xs:attributeGroup>
+     * </xs:complexType>
+     * </xs:element>
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelAvailRs()
     {
@@ -267,31 +271,31 @@ final class TagChoiceTest extends AbstractTestCase
     }
 
     /**
-     * <xs:element form="qualified" minOccurs="0" name="details">
-            <xs:complexType>
-                <xs:sequence>
-                    <xs:choice maxOccurs="unbounded" minOccurs="0">
-                        <xs:element ref="tns:mutualSettlementDetailCalcCostShipping" />
-                        <xs:element ref="tns:mutualSettlementDetailCashFlow" />
-                        <xs:element ref="tns:mutualSettlementDetailClientPayment" />
-                        <xs:element ref="tns:mutualSettlementDetailPostReturnRegistry" />
-                        <xs:element ref="tns:mutualSettlementDetailRouteList" />
-                        <xs:element ref="tns:mutualSettlementDetailTrackNumberPayment" />
-                        <xs:element ref="tns:mutualSettlementDetailServiceRegistration" />
-                        <xs:element ref="tns:mutualSettlementDetailAcceptanceRegistry" />
-                        <xs:element ref="tns:mutualSettlementDetailAdditionalChargeFare" />
-                        <xs:element ref="tns:mutualSettlementDetailOutgoingRequestToCarrier" />
-                        <xs:element ref="tns:mutualSettlementDetailSMSInformation" />
-                        <xs:element ref="tns:mutualSettlementDetailBuyerGoodsReturn" />
-                        <xs:element ref="tns:mutualSettlementDetailProductsPackaging" />
-                        <xs:element ref="tns:mutualSettlementDetailAdjustmentWriteRegisters" />
-                        <xs:element ref="tns:mutualSettlementDetailSafeCustody" />
-                        <xs:element ref="tns:mutualSettlementDetailSafeCustodyCalculation" />
-                        <xs:element ref="tns:mutualSettlementDetailRegisterStorage" />
-                    </xs:choice>
-                </xs:sequence>
-            </xs:complexType>
-         </xs:element>
+     * <xs:element form="qualified" minOccurs="0" name="details">.
+     * <xs:complexType>
+     * <xs:sequence>
+     * <xs:choice maxOccurs="unbounded" minOccurs="0">
+     * <xs:element ref="tns:mutualSettlementDetailCalcCostShipping" />
+     * <xs:element ref="tns:mutualSettlementDetailCashFlow" />
+     * <xs:element ref="tns:mutualSettlementDetailClientPayment" />
+     * <xs:element ref="tns:mutualSettlementDetailPostReturnRegistry" />
+     * <xs:element ref="tns:mutualSettlementDetailRouteList" />
+     * <xs:element ref="tns:mutualSettlementDetailTrackNumberPayment" />
+     * <xs:element ref="tns:mutualSettlementDetailServiceRegistration" />
+     * <xs:element ref="tns:mutualSettlementDetailAcceptanceRegistry" />
+     * <xs:element ref="tns:mutualSettlementDetailAdditionalChargeFare" />
+     * <xs:element ref="tns:mutualSettlementDetailOutgoingRequestToCarrier" />
+     * <xs:element ref="tns:mutualSettlementDetailSMSInformation" />
+     * <xs:element ref="tns:mutualSettlementDetailBuyerGoodsReturn" />
+     * <xs:element ref="tns:mutualSettlementDetailProductsPackaging" />
+     * <xs:element ref="tns:mutualSettlementDetailAdjustmentWriteRegisters" />
+     * <xs:element ref="tns:mutualSettlementDetailSafeCustody" />
+     * <xs:element ref="tns:mutualSettlementDetailSafeCustodyCalculation" />
+     * <xs:element ref="tns:mutualSettlementDetailRegisterStorage" />
+     * </xs:choice>
+     * </xs:sequence>
+     * </xs:complexType>
+     * </xs:element>
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfDetails()
     {

@@ -6,12 +6,16 @@ namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
 use WsdlToPhp\WsdlHandler\Tag\TagHeader;
+use WsdlToPhp\WsdlHandler\Tag\TagInput;
 use WsdlToPhp\WsdlHandler\Tag\TagMessage;
 use WsdlToPhp\WsdlHandler\Tag\TagOperation;
 use WsdlToPhp\WsdlHandler\Tag\TagPart;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
-use WsdlToPhp\WsdlHandler\Tag\TagInput;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagHeaderTest extends AbstractTestCase
 {
     public function testHeaders()

@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
-use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction;
+use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagRestrictionTest extends AbstractTestCase
 {
     public function testIsEnumeration()

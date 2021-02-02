@@ -11,6 +11,10 @@ use WsdlToPhp\WsdlHandler\Tag\TagComplexType;
 use WsdlToPhp\WsdlHandler\Tag\TagElement;
 use WsdlToPhp\WsdlHandler\Tag\TagExtension;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class WsdlTest extends AbstractTestCase
 {
     public function testGetExternalSchemasMustReturnAnEmptyArray()

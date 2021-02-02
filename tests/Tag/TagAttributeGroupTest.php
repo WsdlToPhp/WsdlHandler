@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
-use WsdlToPhp\WsdlHandler\Tag\Tag;
-use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 use WsdlToPhp\WsdlHandler\AbstractDocument;
+use WsdlToPhp\WsdlHandler\Tag\Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagAttributeGroup;
+use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TagAttributeGroupTest extends AbstractTestCase
 {
     public function testGetAttributeRefMustReturnRefAttributeValueFromAttributeGroup()
@@ -126,7 +130,7 @@ final class TagAttributeGroupTest extends AbstractTestCase
 
         $indexRef = 0;
         foreach ($attributeGroups as $attributeGroup) {
-            if ($attributeGroup->getAttributeRef() !== '') {
+            if ('' !== $attributeGroup->getAttributeRef()) {
                 $this->assertSame($attributeRefs[$indexRef++], $attributeGroup->getAttributeRef());
             }
         }
@@ -180,7 +184,7 @@ final class TagAttributeGroupTest extends AbstractTestCase
 
         $indexName = 0;
         foreach ($attributeGroups as $attributeGroup) {
-            if ($attributeGroup->getAttributeName() !== '') {
+            if ('' !== $attributeGroup->getAttributeName()) {
                 $this->assertSame($attributeNames[$indexName++], $attributeGroup->getAttributeName());
             }
         }
@@ -235,11 +239,11 @@ final class TagAttributeGroupTest extends AbstractTestCase
         $testedCount = 0;
         /** @var TagAttributeGroup $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {
-            if ($attributeGroup->getAttributeName() !== '') {
+            if ('' !== $attributeGroup->getAttributeName()) {
                 $elements = $attributeGroup->getReferencingElements();
                 $this->assertCount($attributeGroupCounts[$attributeGroup->getAttributeName()], $elements, sprintf('Failed with attributeGroup is "%s"', $attributeGroup->getAttributeName()));
                 $this->assertContainsOnlyInstancesOf(Tag::class, $elements);
-                $testedCount++;
+                ++$testedCount;
             }
         }
         $this->assertCount($testedCount, $attributeGroupCounts);

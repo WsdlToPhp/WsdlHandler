@@ -19,11 +19,6 @@ class TagDocumentation extends Tag
      * This case is managed first because enumerations are contained by elements and
      * the method could climb to its parent without stopping on the enumeration tag.
      * Indeed, depending on the node, it may contain or not the attribute named "name" so we have to split each case.
-     * @param bool $checkName
-     * @param array $additionalTags
-     * @param int $maxDeep
-     * @param bool $strict
-     * @return AbstractNodeHandler|null
      */
     public function getSuitableParent(bool $checkName = true, array $additionalTags = [], int $maxDeep = self::MAX_DEEP, bool $strict = false): ?AbstractNodeHandler
     {

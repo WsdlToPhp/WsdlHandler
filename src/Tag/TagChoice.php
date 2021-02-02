@@ -21,32 +21,6 @@ class TagChoice extends Tag
         return $children;
     }
 
-    protected function getFilteredChildrenByName(string $tagName): array
-    {
-        return array_filter($this->getChildrenByName($tagName), [
-            $this,
-            'filterFoundChildren',
-        ]);
-    }
-
-    /**
-     * This must ensure the current element, based on its tagName is not contained by another element than the choice.
-     * If it is contained by another element, then it is child/property of its parent element and does not belong to the choice elements
-     * @param AbstractTag $child
-     * @return bool
-     */
-    protected function filterFoundChildren(AbstractTag $child): bool
-    {
-        $forbiddenParentTags = self::getForbiddenParentTags();
-        $valid = true;
-        while ($child && $child->getParent() && !$this->getNode()->isSameNode($child->getParent()->getNode())) {
-            $valid = $valid && !in_array($child->getParent()->getName(), $forbiddenParentTags);
-            $child = $child->getParent();
-        }
-
-        return (bool) $valid;
-    }
-
     public static function getChildrenElementsTags(): array
     {
         return [
@@ -62,5 +36,29 @@ class TagChoice extends Tag
         return [
             AbstractDocument::TAG_COMPLEX_TYPE,
         ];
+    }
+
+    protected function getFilteredChildrenByName(string $tagName): array
+    {
+        return array_filter($this->getChildrenByName($tagName), [
+            $this,
+            'filterFoundChildren',
+        ]);
+    }
+
+    /**
+     * This must ensure the current element, based on its tagName is not contained by another element than the choice.
+     * If it is contained by another element, then it is child/property of its parent element and does not belong to the choice elements.
+     */
+    protected function filterFoundChildren(AbstractTag $child): bool
+    {
+        $forbiddenParentTags = self::getForbiddenParentTags();
+        $valid = true;
+        while ($child && $child->getParent() && !$this->getNode()->isSameNode($child->getParent()->getNode())) {
+            $valid = $valid && !in_array($child->getParent()->getName(), $forbiddenParentTags);
+            $child = $child->getParent();
+        }
+
+        return (bool) $valid;
     }
 }

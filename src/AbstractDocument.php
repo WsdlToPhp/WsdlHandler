@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler;
 
 use DOMElement;
-use WsdlToPhp\DomHandler\ElementHandler;
-use WsdlToPhp\DomHandler\DomDocumentHandler;
 use WsdlToPhp\DomHandler\AbstractDomDocumentHandler;
+use WsdlToPhp\DomHandler\DomDocumentHandler;
+use WsdlToPhp\DomHandler\ElementHandler;
 use WsdlToPhp\WsdlHandler\Tag\Tag;
 
 abstract class AbstractDocument extends DomDocumentHandler
@@ -58,16 +58,6 @@ abstract class AbstractDocument extends DomDocumentHandler
     const TAG_UNION = 'union';
     const TAG_UNIQUE = 'unique';
 
-    protected function getElementHandler(DOMElement $element, AbstractDomDocumentHandler $domDocument, int $index = -1): ElementHandler
-    {
-        $handlerName = Tag::class;
-        if (class_exists($elementNameClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst(implode('', array_slice(explode(':', $element->nodeName), -1, 1)))))) {
-            $handlerName = $elementNameClass;
-        }
-
-        return new $handlerName($element, $domDocument, $index);
-    }
-
     public function getNamespaceUri(string $namespace): string
     {
         $rootElement = $this->getRootElement();
@@ -77,5 +67,15 @@ abstract class AbstractDocument extends DomDocumentHandler
         }
 
         return $uri;
+    }
+
+    protected function getElementHandler(DOMElement $element, AbstractDomDocumentHandler $domDocument, int $index = -1): ElementHandler
+    {
+        $handlerName = Tag::class;
+        if (class_exists($elementNameClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst(implode('', array_slice(explode(':', $element->nodeName), -1, 1)))))) {
+            $handlerName = $elementNameClass;
+        }
+
+        return new $handlerName($element, $domDocument, $index);
     }
 }
