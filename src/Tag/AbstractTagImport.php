@@ -22,7 +22,7 @@ abstract class AbstractTagImport extends Tag
             $location = $this->getAttributeValue(self::ATTRIBUTE_SCHEMA_LOCATION_, true);
         }
 
-        if (!empty($location) && mb_substr($location, 0, 2) === './') {
+        if (!empty($location) && './' === mb_substr($location, 0, 2)) {
             $location = mb_substr($location, 2);
         }
 

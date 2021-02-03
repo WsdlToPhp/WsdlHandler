@@ -9,6 +9,10 @@ use WsdlToPhp\WsdlHandler\Tag\TagEnumeration;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagEnumerationTest extends AbstractTestCase
 {
     public function testGetValueMustReturnTheValue()
@@ -17,7 +21,7 @@ final class TagEnumerationTest extends AbstractTestCase
         $enumerations = $schema->getElementsByName(AbstractDocument::TAG_ENUMERATION);
 
         /**
-         * @var int $index
+         * @var int            $index
          * @var TagEnumeration $enumeration
          */
         foreach ($enumerations as $index => $enumeration) {

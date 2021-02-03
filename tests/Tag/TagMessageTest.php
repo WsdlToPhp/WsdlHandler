@@ -9,6 +9,10 @@ use WsdlToPhp\WsdlHandler\Tag\TagMessage;
 use WsdlToPhp\WsdlHandler\Tag\TagPart;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagMessageTest extends AbstractTestCase
 {
     public function testGetPart()

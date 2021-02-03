@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
-use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 use WsdlToPhp\WsdlHandler\Tag\TagList;
+use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagListTest extends AbstractTestCase
 {
     public function testGetItemTypeMustReturnIntForExistingItemTypeAttribute()

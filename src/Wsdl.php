@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler;
 
 use DOMNode;
-use DOMNodeList;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 
 class Wsdl extends AbstractDocument
@@ -74,11 +73,8 @@ class Wsdl extends AbstractDocument
 
     /**
      * Handles any method that exist within the parent class,
-     * in addition it handles the case when we want to use the external schemas to search in
-     * @param string $method
-     * @param array $parameters
-     * @param bool $includeExternals
-     * @param bool $returnOne
+     * in addition it handles the case when we want to use the external schemas to search in.
+     *
      * @return mixed
      */
     protected function useParentMethodAndExternals(string $method, array $parameters, bool $includeExternals = false, bool $returnOne = false)
@@ -107,8 +103,10 @@ class Wsdl extends AbstractDocument
 
             if ($returnOne && !is_null($externalResult)) {
                 $result = $externalResult;
+
                 break;
-            } elseif (is_array($externalResult) && !empty($externalResult)) {
+            }
+            if (is_array($externalResult) && !empty($externalResult)) {
                 $result = array_merge($result, $externalResult);
             }
         }

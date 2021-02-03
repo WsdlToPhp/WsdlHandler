@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
-use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 use WsdlToPhp\WsdlHandler\Tag\TagUnion;
+use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagUnionTest extends AbstractTestCase
 {
     public function testGetAttributeMemberTypes()
@@ -28,13 +32,16 @@ final class TagUnionTest extends AbstractTestCase
                         'anyURI',
                     ], $union->getAttributeMemberTypes());
                     $ok |= true;
+
                     break;
+
                 case 'FaultCodesOpenEnumType':
                     $this->assertSame([
-                            'FaultCodesType',
-                            'QName',
+                        'FaultCodesType',
+                        'QName',
                     ], $union->getAttributeMemberTypes());
                     $ok |= true;
+
                     break;
             }
         }
@@ -55,11 +62,14 @@ final class TagUnionTest extends AbstractTestCase
             switch ($union->getSuitableParent()->getAttributeName()) {
                 case 'RelationshipTypeOpenEnum':
                     $this->assertFalse($union->hasMemberTypesAsChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
+
                 case 'FaultCodesOpenEnumType':
                     $this->assertFalse($union->hasMemberTypesAsChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
             }
         }
@@ -81,11 +91,14 @@ final class TagUnionTest extends AbstractTestCase
             switch ($union->getSuitableParent()->getAttributeName()) {
                 case 'ReminderMinutesBeforeStartType':
                     $this->assertTrue($union->hasMemberTypesAsChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
+
                 case 'PropertyTagType':
                     $this->assertTrue($union->hasMemberTypesAsChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
             }
         }
@@ -107,11 +120,14 @@ final class TagUnionTest extends AbstractTestCase
             switch ($union->getSuitableParent()->getAttributeName()) {
                 case 'ReminderMinutesBeforeStartType':
                     $this->assertCount(2, $union->getMemberTypesChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
+
                 case 'PropertyTagType':
                     $this->assertCount(1, $union->getMemberTypesChildren());
-                    $tests++;
+                    ++$tests;
+
                     break;
             }
         }

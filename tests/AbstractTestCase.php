@@ -28,7 +28,8 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
                 ->addExternalSchema(self::getSchema(self::getPath('image/availableImagesResponse.xsd')))
                 ->addExternalSchema(self::getSchema(self::getPath('image/imagesRequest.xsd')))
                 ->addExternalSchema(self::getSchema(self::getPath('image/imagesResponse.xsd')))
-                ->addExternalSchema(self::getSchema(self::getPath('image/imageViewCommon.xsd')));
+                ->addExternalSchema(self::getSchema(self::getPath('image/imageViewCommon.xsd')))
+            ;
         }
 
         return $wsdl;
@@ -90,7 +91,7 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
         $wsdl = self::getWsdl(self::wsdlPartnerPath(), $addExternalSchemas);
 
         if ($addExternalSchemas && 0 == count($wsdl->getExternalSchemas())) {
-            for ($i = 0;$i < 19;$i++) {
+            for ($i = 0; $i < 19; ++$i) {
                 $wsdl->addExternalSchema(self::getSchema(self::getPath(sprintf('partner/PartnerService.%s.xsd', $i))));
             }
         }
@@ -170,7 +171,8 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
         if ($addExternalSchemas && 0 == count($wsdl->getExternalSchemas())) {
             $wsdl
                 ->addExternalSchema(self::schemaVehicleSelectionServiceSchema1Instance())
-                ->addExternalSchema(self::schemaVehicleSelectionServiceSchema2Instance());
+                ->addExternalSchema(self::schemaVehicleSelectionServiceSchema2Instance())
+            ;
         }
 
         return $wsdl;

@@ -13,8 +13,7 @@ class TagPart extends Tag
     const ATTRIBUTE_TYPE = 'type';
 
     /**
-     * @param bool $returnValue
-     * @return AttributeHandler|string|int|null
+     * @return null|AttributeHandler|int|string
      */
     public function getAttributeElement(bool $returnValue = true)
     {
@@ -22,27 +21,11 @@ class TagPart extends Tag
     }
 
     /**
-     * @param bool $returnValue
-     * @return AttributeHandler|string|int|null
+     * @return null|AttributeHandler|int|string
      */
     public function getAttributeType(bool $returnValue = true)
     {
         return $this->getAttributeMixedValue(self::ATTRIBUTE_TYPE, $returnValue);
-    }
-
-    /**
-     * @param string $attributeName
-     * @param bool $returnValue
-     * @return AttributeHandler|string|int|null
-     */
-    protected function getAttributeMixedValue(string $attributeName, bool $returnValue = true)
-    {
-        $value = $this->getAttribute($attributeName);
-        if ($returnValue) {
-            $value = $value instanceof AttributeHandler ? $value->getValue() : null;
-        }
-
-        return $value;
     }
 
     public function getFinalType(): string
@@ -61,6 +44,7 @@ class TagPart extends Tag
                 }
             }
         }
+
         return $type;
     }
 
@@ -87,5 +71,18 @@ class TagPart extends Tag
         }
 
         return null;
+    }
+
+    /**
+     * @return null|AttributeHandler|int|string
+     */
+    protected function getAttributeMixedValue(string $attributeName, bool $returnValue = true)
+    {
+        $value = $this->getAttribute($attributeName);
+        if ($returnValue) {
+            $value = $value instanceof AttributeHandler ? $value->getValue() : null;
+        }
+
+        return $value;
     }
 }

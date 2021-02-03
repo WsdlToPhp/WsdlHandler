@@ -20,9 +20,7 @@ class Tag extends AbstractTag
     }
 
     /**
-     * Checks if the given tag is the same direct parent of this current tag
-     * @param AbstractTag $tag
-     * @return bool
+     * Checks if the given tag is the same direct parent of this current tag.
      */
     public function isTheParent(AbstractTag $tag): bool
     {

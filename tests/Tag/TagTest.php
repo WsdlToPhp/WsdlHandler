@@ -9,6 +9,10 @@ use WsdlToPhp\WsdlHandler\Tag\Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagTest extends AbstractTestCase
 {
     public function testGetFirstRestrictionChildMustReturnTheRestrictionTag()

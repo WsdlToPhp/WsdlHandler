@@ -5,10 +5,14 @@ declare(strict_types=1);
 namespace WsdlToPhp\WsdlHandler\Tests\Tag;
 
 use WsdlToPhp\WsdlHandler\AbstractDocument;
+use WsdlToPhp\WsdlHandler\Tag\TagAttribute;
 use WsdlToPhp\WsdlHandler\Tag\TagAttributeGroup;
 use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
-use WsdlToPhp\WsdlHandler\Tag\TagAttribute;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagAttributeTest extends AbstractTestCase
 {
     public function testGetSuitableParentAsAttributeGroupMustReturnAttributeGroupParent()
