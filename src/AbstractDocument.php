@@ -58,15 +58,29 @@ abstract class AbstractDocument extends DomDocumentHandler
     const TAG_UNION = 'union';
     const TAG_UNIQUE = 'unique';
 
+    const ATTRIBUTE_TARGET_NAMESPACE = 'targetNamespace';
+
     public function getNamespaceUri(string $namespace): string
     {
         $rootElement = $this->getRootElement();
         $uri = '';
         if ($rootElement instanceof ElementHandler && $rootElement->hasAttribute(sprintf('xmlns:%s', $namespace))) {
-            $uri = $rootElement->getAttribute(sprintf('xmlns:%s', $namespace))->getValue();
+            $uri = $rootElement->getAttributeValue(sprintf('xmlns:%s', $namespace));
         }
 
         return $uri;
+    }
+
+    public function getAttributeTargetNamespaceValue(): string
+    {
+        $namespace = '';
+        $rootElement = $this->getRootElement();
+
+        if ($rootElement instanceof ElementHandler && $rootElement->hasAttribute(self::ATTRIBUTE_TARGET_NAMESPACE)) {
+            $namespace = $rootElement->getAttributeValue(self::ATTRIBUTE_TARGET_NAMESPACE, true);
+        }
+
+        return $namespace;
     }
 
     protected function getElementHandler(DOMElement $element, AbstractDomDocumentHandler $domDocument, int $index = -1): ElementHandler

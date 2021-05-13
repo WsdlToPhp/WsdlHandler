@@ -174,7 +174,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:annotation>
      * </xs:attributeGroup>
      * </xs:complexType>
-     * </xs:element>
+     * </xs:element>.
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelDescriptiveInfoRs()
     {
@@ -250,7 +250,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:annotation>
      * </xs:attributeGroup>
      * </xs:complexType>
-     * </xs:element>
+     * </xs:element>.
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelAvailRs()
     {
@@ -295,7 +295,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:choice>
      * </xs:sequence>
      * </xs:complexType>
-     * </xs:element>
+     * </xs:element>.
      */
     public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfDetails()
     {

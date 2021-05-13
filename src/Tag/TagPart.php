@@ -20,6 +20,19 @@ class TagPart extends Tag
         return $this->getAttributeMixedValue(self::ATTRIBUTE_ELEMENT, $returnValue);
     }
 
+    public function getMatchingElement(): ?TagElement
+    {
+        $element = null;
+        $elementName = $this->getAttributeElement();
+        if (!empty($elementName)) {
+            $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(AbstractDocument::TAG_ELEMENT, [
+                'name' => $elementName,
+            ], true);
+        }
+
+        return $element;
+    }
+
     /**
      * @return null|AttributeHandler|int|string
      */
@@ -32,16 +45,11 @@ class TagPart extends Tag
     {
         $type = $this->getAttributeType();
         if (empty($type)) {
-            $elementName = $this->getAttributeElement();
-            if (!empty($elementName)) {
-                $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(AbstractDocument::TAG_ELEMENT, [
-                    'name' => $elementName,
-                ], true);
-                if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
-                    $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
-                } else {
-                    $type = $elementName;
-                }
+            $element = $this->getMatchingElement();
+            if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
+                $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
+            } else {
+                $type = $this->getAttributeElement();
             }
         }
 
@@ -61,13 +69,13 @@ class TagPart extends Tag
     public function getFinalNamespace(): ?string
     {
         $attribute = $this->getAttributeType(false);
-        if (!empty($attribute)) {
-            return $attribute->getValueNamespace();
+        if ($attribute instanceof AttributeHandler && !empty($namespace = $attribute->getValueNamespace())) {
+            return $namespace;
         }
 
         $attribute = $this->getAttributeElement(false);
-        if (!empty($attribute)) {
-            return $attribute->getValueNamespace();
+        if ($attribute instanceof AttributeHandler && !empty($namespace = $attribute->getValueNamespace())) {
+            return $namespace;
         }
 
         return null;
