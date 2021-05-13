@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.3 - 2021/05/13
+- issue #2 - getAttributeMessageNamespace() must be of the type string, null returned
+
 ## 1.0.2 - 2021/02/03
 - Review .php_cs settings, apply PHP CS Fixer
 
