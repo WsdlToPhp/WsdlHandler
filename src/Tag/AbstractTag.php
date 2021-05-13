@@ -15,6 +15,11 @@ abstract class AbstractTag extends ElementHandler
 {
     const MAX_DEEP = 5;
 
+    public function getDomDocumentHandler(): AbstractDocument
+    {
+        return parent::getDomDocumentHandler();
+    }
+
     /**
      * This method aims to get the parent element that matches a valid Wsdl element (aka struct).
      *
@@ -67,6 +72,32 @@ abstract class AbstractTag extends ElementHandler
     public function getValueAttributeValue(bool $withNamespace = false, bool $withinItsType = true, ?string $asType = null)
     {
         return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
+    }
+
+    public function hasAttributeTargetNamespace(): bool
+    {
+        return $this->hasAttribute(AbstractDocument::ATTRIBUTE_TARGET_NAMESPACE);
+    }
+
+    public function getTargetNamespaceAttributeValue()
+    {
+        return $this->getAttribute(AbstractDocument::ATTRIBUTE_TARGET_NAMESPACE) instanceof Attribute ? $this->getAttribute(AbstractDocument::ATTRIBUTE_TARGET_NAMESPACE)->getValue(true) : '';
+    }
+
+    /**
+     * Retrieve element targetNamespace applicable value,
+     * from targetNamespace attribute depending on the current Tag.
+     */
+    public function getTargetNamespace(): string
+    {
+        $schema = $this instanceof TagSchema ? $this : $this->getStrictParent(AbstractDocument::TAG_SCHEMA);
+        if ($schema instanceof TagSchema && $schema->hasAttributeTargetNamespace()) {
+            $namespace = $schema->getTargetNamespaceAttributeValue();
+        } else {
+            $namespace = $this->getDomDocumentHandler()->getAttributeTargetNamespaceValue();
+        }
+
+        return $namespace;
     }
 
     protected function getSuitableParentTags(array $additionalTags = []): array

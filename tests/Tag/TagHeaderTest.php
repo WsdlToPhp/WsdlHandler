@@ -80,6 +80,15 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('urn:ebay:apis:eBLBaseComponents', $header->getHeaderNamespace());
     }
 
+    public function testGetHeaderNamespaceMustReturnNamespaceFromSchemaContainingElementMatchingPart()
+    {
+        $wsdl = self::wsdlUnitTestInstance();
+
+        $header = $wsdl->getElementByName(AbstractDocument::TAG_HEADER);
+
+        $this->assertSame('http://schemas.com/GetResult', $header->getHeaderNamespace());
+    }
+
     public function testGetAttributeRequiredMustReturnTrueOrFalse()
     {
         $wsdl = self::wsdlActonInstance();

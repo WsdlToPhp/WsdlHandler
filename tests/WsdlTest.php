@@ -153,4 +153,9 @@ final class WsdlTest extends AbstractTestCase
         ], null, true));
         $this->assertContainsOnlyInstancesOf(TagElement::class, $elements);
     }
+
+    public function testGetAttributeTargetNamespaceValueMustReturnTheTargetNamespaceAttributeValue()
+    {
+        $this->assertSame('http://schemas.microsoft.com/LiveSearch/2008/03/Search', self::wsdlBingInstance()->getAttributeTargetNamespaceValue());
+    }
 }
