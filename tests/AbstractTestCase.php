@@ -198,6 +198,16 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
         return self::getSchema(self::schemaEwsTypesPath());
     }
 
+    public static function wsdlUnitTestPath(): string
+    {
+        return self::getPath('unit_tests.wsdl');
+    }
+
+    public static function wsdlUnitTestInstance(): Wsdl
+    {
+        return self::getWsdl(self::wsdlUnitTestPath());
+    }
+
     public static function getWsdl(string $wsdlPath, bool $addExternalSchemas = true): Wsdl
     {
         $wsdlKey = sprintf('%s_%s', $wsdlPath, ((int) $addExternalSchemas));

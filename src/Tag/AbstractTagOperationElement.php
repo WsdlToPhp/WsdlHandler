@@ -25,9 +25,9 @@ abstract class AbstractTagOperationElement extends Tag
         return $this->hasAttributeMessage() ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValue() : '';
     }
 
-    public function getAttributeMessageNamespace(): string
+    public function getAttributeMessageNamespace(): ?string
     {
-        return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
+        return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : null;
     }
 
     public function getMessage(): ?TagMessage
@@ -36,7 +36,7 @@ abstract class AbstractTagOperationElement extends Tag
         $messageName = $this->getAttributeMessage();
 
         if (!empty($messageName)) {
-            $message = $this->getDomDocumentHandler()->getElementByNameAndAttributes('message', [
+            $message = $this->getDomDocumentHandler()->getElementByNameAndAttributes(AbstractDocument::TAG_MESSAGE, [
                 'name' => $messageName,
             ], true);
         }

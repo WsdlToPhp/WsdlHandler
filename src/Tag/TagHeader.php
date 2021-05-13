@@ -76,6 +76,8 @@ class TagHeader extends AbstractTagOperationElement
             $finalNamespace = $part->getFinalNamespace();
             if (!empty($finalNamespace)) {
                 $namespace = $this->getDomDocumentHandler()->getNamespaceUri($finalNamespace);
+            } elseif (($element = $part->getMatchingElement()) instanceof TagElement) {
+                $namespace = $element->getTargetNamespace();
             }
         }
 

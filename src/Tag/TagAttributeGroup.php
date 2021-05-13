@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler\Tag;
 
+use WsdlToPhp\WsdlHandler\AbstractDocument;
+
 class TagAttributeGroup extends Tag
 {
     public function getReferencingElements(): array
     {
         $elements = [];
-        $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', [
+        $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes(AbstractDocument::TAG_ATTRIBUTE_GROUP, [
             'ref' => sprintf('*:%s', $this->getAttributeName()),
         ]);
         /*
@@ -17,7 +19,7 @@ class TagAttributeGroup extends Tag
          * use the non namespaced value
          */
         if (empty($attributeGroups)) {
-            $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', [
+            $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes(AbstractDocument::TAG_ATTRIBUTE_GROUP, [
                 'ref' => sprintf('*%s', $this->getAttributeName()),
             ]);
         }
