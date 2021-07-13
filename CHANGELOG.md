@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.4 - 2021/07/14
+- issue #3 - Choice tag must ignore sequence tag
+
 ## 1.0.3 - 2021/05/13
 - issue #2 - getAttributeMessageNamespace() must be of the type string, null returned
 
