@@ -23,6 +23,8 @@ class TagAttributeGroup extends Tag
                 'ref' => sprintf('*%s', $this->getAttributeName()),
             ]);
         }
+
+        /** @var AbstractTag $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {
             $parent = $attributeGroup->getSuitableParent();
             /*

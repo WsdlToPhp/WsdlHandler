@@ -13,7 +13,7 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 abstract class AbstractTag extends ElementHandler
 {
-    const MAX_DEEP = 5;
+    public const MAX_DEEP = 5;
 
     public function getDomDocumentHandler(): AbstractDocument
     {

@@ -18,6 +18,7 @@ final class TagAttributeTest extends AbstractTestCase
     public function testGetSuitableParentAsAttributeGroupMustReturnAttributeGroupParent()
     {
         $schema = self::wsdlWhlInstance();
+
         /** @var TagAttribute $attribute */
         $attribute = $schema->getElementByNameAndAttributes(AbstractDocument::TAG_ATTRIBUTE, [
             'name' => 'ShortText',

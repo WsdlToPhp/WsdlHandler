@@ -8,7 +8,7 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 abstract class AbstractTagOperationElement extends Tag
 {
-    const ATTRIBUTE_MESSAGE = 'message';
+    public const ATTRIBUTE_MESSAGE = 'message';
 
     public function getParentOperation(): ?TagOperation
     {

@@ -26,7 +26,8 @@
         "wsdltophp/domhandler": "~2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.0",
+        "friendsofphp/php-cs-fixer": "~3.0",
+        "phpstan/phpstan": "^1.4",
         "phpunit/phpunit": "^9"
     },
     "config": {
@@ -44,7 +45,8 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose"
+        "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
+        "phpstan": "vendor/bin/phpstan analyze src --level=2"
     },
     "support": {
         "email": "contact@wsdltophp.com"

@@ -4,12 +4,12 @@
 
 [![License](https://poser.pugx.org/wsdltophp/wsdlhandler/license)](https://packagist.org/packages/wsdltophp/wsdlhandler)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/wsdlhandler/version.png)](https://packagist.org/packages/wsdltophp/wsdlhandler)
-[![Build Status](https://travis-ci.com/WsdlToPhp/WsdlHandler.svg)](https://travis-ci.com/github/WsdlToPhp/WsdlHandler)
+[![TeamCity build status](https://teamcity.mikael-delsol.fr/app/rest/builds/buildType:id:WsdlHandler_Build/statusIcon.svg)](https://github.com/WsdlToPhp/WsdlHandler)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/)
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/WsdlHandler/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/wsdlhandler/downloads)](https://packagist.org/packages/wsdltophp/wsdlhandler)
 [![StyleCI](https://styleci.io/repos/87977980/shield)](https://styleci.io/repos/87977980)
-[![SymfonyInsight](https://insight.symfony.com/projects/3dd23426-0808-4715-9a11-e51dc84cb0b4/mini.svg)](https://insight.symfony.com/projects/3dd23426-0808-4715-9a11-e51dc84cb0b4)
+[![SymfonyInsight](https://insight.symfony.com/projects/b3232a2b-83c4-4546-92ae-c3f1357f62e9/mini.svg)](https://insight.symfony.com/projects/b3232a2b-83c4-4546-92ae-c3f1357f62e9)
 
 WsdlHandler uses the [decorator design pattern](https://en.wikipedia.org/wiki/Decorator_pattern) upon [DomHandler](https://github.com/WsdlToPhp/DomHandler).
 

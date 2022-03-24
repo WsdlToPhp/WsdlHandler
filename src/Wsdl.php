@@ -53,9 +53,10 @@ class Wsdl extends AbstractDocument
                 $attributes,
                 $node,
             ]);
+
             /** @var Schema $externalSchema */
             foreach ($this->getExternalSchemas() as $index => $externalSchema) {
-                if (0 < ($nodes = $externalSchema->searchTagsByXpath($name, $attributes, $node))->length) {
+                if (0 < ($nodes = $externalSchema->searchTagsByXpath($name, $attributes, $node))->count()) {
                     $elements = array_merge($elements, $this->getElementsHandlers($nodes));
                 }
             }

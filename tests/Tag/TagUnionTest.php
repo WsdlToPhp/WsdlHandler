@@ -57,6 +57,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertContainsOnlyInstancesOf(TagUnion::class, $unions);
 
         $tests = 0;
+
         /** @var TagUnion $union */
         foreach ($unions as $union) {
             switch ($union->getSuitableParent()->getAttributeName()) {
@@ -86,6 +87,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertContainsOnlyInstancesOf(TagUnion::class, $unions);
 
         $tests = 0;
+
         /** @var TagUnion $union */
         foreach ($unions as $union) {
             switch ($union->getSuitableParent()->getAttributeName()) {
@@ -115,6 +117,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertContainsOnlyInstancesOf(TagUnion::class, $unions);
 
         $tests = 0;
+
         /** @var TagUnion $union */
         foreach ($unions as $union) {
             switch ($union->getSuitableParent()->getAttributeName()) {
