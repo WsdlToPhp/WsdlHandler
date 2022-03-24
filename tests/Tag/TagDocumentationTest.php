@@ -35,6 +35,7 @@ final class TagDocumentationTest extends AbstractTestCase
         ];
 
         $assertCount = 0;
+
         /** @var TagDocumentation $documentation */
         foreach ($documentations as $index => $documentation) {
             $parent = $documentation->getSuitableParent();

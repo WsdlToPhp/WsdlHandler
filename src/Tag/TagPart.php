@@ -9,8 +9,8 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagPart extends Tag
 {
-    const ATTRIBUTE_ELEMENT = 'element';
-    const ATTRIBUTE_TYPE = 'type';
+    public const ATTRIBUTE_ELEMENT = 'element';
+    public const ATTRIBUTE_TYPE = 'type';
 
     /**
      * @return null|AttributeHandler|int|string

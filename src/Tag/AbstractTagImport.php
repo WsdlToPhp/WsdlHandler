@@ -6,9 +6,9 @@ namespace WsdlToPhp\WsdlHandler\Tag;
 
 abstract class AbstractTagImport extends Tag
 {
-    const ATTRIBUTE_LOCATION = 'location';
-    const ATTRIBUTE_SCHEMA_LOCATION = 'schemaLocation';
-    const ATTRIBUTE_SCHEMA_LOCATION_ = 'schemalocation';
+    public const ATTRIBUTE_LOCATION = 'location';
+    public const ATTRIBUTE_SCHEMA_LOCATION = 'schemaLocation';
+    public const ATTRIBUTE_SCHEMA_LOCATION_ = 'schemalocation';
 
     public function getLocationAttributeValue(): string
     {

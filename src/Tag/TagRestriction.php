@@ -8,7 +8,7 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagRestriction extends Tag
 {
-    const ATTRIBUTE_BASE = 'base';
+    public const ATTRIBUTE_BASE = 'base';
 
     public function isEnumeration(): bool
     {

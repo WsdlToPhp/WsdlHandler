@@ -106,6 +106,7 @@ final class TagHeaderTest extends AbstractTestCase
         $sessionHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'SessionHeader',
         ]);
+
         /** @var TagHeader $clusterHeader */
         $clusterHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'ClusterHeader',
@@ -132,6 +133,7 @@ final class TagHeaderTest extends AbstractTestCase
         $sessionHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'SessionHeader',
         ]);
+
         /** @var TagHeader $clusterHeader */
         $clusterHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'ClusterHeader',
@@ -158,6 +160,7 @@ final class TagHeaderTest extends AbstractTestCase
         $sessionHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'SessionHeader',
         ]);
+
         /** @var TagHeader $clusterHeader */
         $clusterHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'ClusterHeader',
@@ -184,6 +187,7 @@ final class TagHeaderTest extends AbstractTestCase
         $sessionHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'SessionHeader',
         ]);
+
         /** @var TagHeader $clusterHeader */
         $clusterHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'ClusterHeader',
@@ -210,6 +214,7 @@ final class TagHeaderTest extends AbstractTestCase
         $sessionHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'SessionHeader',
         ]);
+
         /** @var TagHeader $clusterHeader */
         $clusterHeader = $operation->getChildByNameAndAttributes(AbstractDocument::TAG_HEADER, [
             'part' => 'ClusterHeader',

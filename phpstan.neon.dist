@@ -1,0 +1,12 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method WsdlToPhp\\\\DomHandler\\\\AbstractDomDocumentHandler\\:\\:getElementByNameAndAttributes\\(\\) invoked with 3 parameters, 2 required\\.$#"
+			count: 1
+			path: src/Tag/AbstractTagOperationElement.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\DomHandler\\\\AbstractDomDocumentHandler\\:\\:getElementByNameAndAttributes\\(\\) invoked with 3 parameters, 2 required\\.$#"
+			count: 1
+			path: src/Tag/TagPart.php
+

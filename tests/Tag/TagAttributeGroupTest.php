@@ -237,14 +237,17 @@ final class TagAttributeGroupTest extends AbstractTestCase
         ];
 
         $testedCount = 0;
+
         /** @var TagAttributeGroup $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {
-            if ('' !== $attributeGroup->getAttributeName()) {
-                $elements = $attributeGroup->getReferencingElements();
-                $this->assertCount($attributeGroupCounts[$attributeGroup->getAttributeName()], $elements, sprintf('Failed with attributeGroup is "%s"', $attributeGroup->getAttributeName()));
-                $this->assertContainsOnlyInstancesOf(Tag::class, $elements);
-                ++$testedCount;
+            if ('' === $attributeGroup->getAttributeName()) {
+                continue;
             }
+
+            $elements = $attributeGroup->getReferencingElements();
+            $this->assertCount($attributeGroupCounts[$attributeGroup->getAttributeName()], $elements, sprintf('Failed with attributeGroup is "%s"', $attributeGroup->getAttributeName()));
+            $this->assertContainsOnlyInstancesOf(Tag::class, $elements);
+            ++$testedCount;
         }
         $this->assertCount($testedCount, $attributeGroupCounts);
     }

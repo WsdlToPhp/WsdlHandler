@@ -8,7 +8,7 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagUnion extends Tag
 {
-    const ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
+    public const ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
 
     public function getAttributeMemberTypes(): array
     {

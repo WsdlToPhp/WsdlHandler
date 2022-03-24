@@ -8,7 +8,7 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagList extends Tag
 {
-    const ATTRIBUTE_ITEM_TYPE = 'itemType';
+    public const ATTRIBUTE_ITEM_TYPE = 'itemType';
 
     public function getAttributeItemType(): string
     {

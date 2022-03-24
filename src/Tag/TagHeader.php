@@ -9,10 +9,10 @@ use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 class TagHeader extends AbstractTagOperationElement
 {
-    const ATTRIBUTE_PART = 'part';
-    const REQUIRED_HEADER = 'required';
-    const OPTIONAL_HEADER = 'optional';
-    const ATTRIBUTE_REQUIRED = 'wsdl:required';
+    public const ATTRIBUTE_PART = 'part';
+    public const REQUIRED_HEADER = 'required';
+    public const OPTIONAL_HEADER = 'optional';
+    public const ATTRIBUTE_REQUIRED = 'wsdl:required';
 
     public function getParentInput(): ?TagInput
     {
