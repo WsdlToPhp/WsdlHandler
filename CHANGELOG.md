@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.5 - 2022/03/24
+- Update PHP CS Fixer and corresponding setting file
+- Add PHPStan
+
 ## 1.0.4 - 2021/07/14
 - issue #3 - Choice tag must ignore sequence tag
 
