@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagUnionTest extends AbstractTestCase
 {
-    public function testGetAttributeMemberTypes()
+    public function testGetAttributeMemberTypes(): void
     {
         $wsdl = self::wsdlOrderContractInstance();
 
@@ -48,7 +49,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertTrue((bool) $ok);
     }
 
-    public function testHasMemberTypesAsChildrenMustReturnFalse()
+    public function testHasMemberTypesAsChildrenMustReturnFalse(): void
     {
         $wsdl = self::wsdlOrderContractInstance();
         $unions = $wsdl->getElementsByName(AbstractDocument::TAG_UNION);
@@ -78,7 +79,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertSame(2, $tests);
     }
 
-    public function testHasMemberTypesAsChildrenMustReturnTrue()
+    public function testHasMemberTypesAsChildrenMustReturnTrue(): void
     {
         $schema = self::schemaEwsTypesInstance();
         $unions = $schema->getElementsByName(AbstractDocument::TAG_UNION);
@@ -108,7 +109,7 @@ final class TagUnionTest extends AbstractTestCase
         $this->assertSame(2, $tests);
     }
 
-    public function testGetMemberTypesChildrenMustReturnTheChildren()
+    public function testGetMemberTypesChildrenMustReturnTheChildren(): void
     {
         $schema = self::schemaEwsTypesInstance();
         $unions = $schema->getElementsByName(AbstractDocument::TAG_UNION);

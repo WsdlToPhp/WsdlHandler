@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagSchemaTest extends AbstractTestCase
 {
-    public function testHasAttributeTargetNamespaceMustReturnTrue()
+    public function testHasAttributeTargetNamespaceMustReturnTrue(): void
     {
         /** @var Tag $schema */
         $schema = self::wsdlBingInstance()->getElementByName(AbstractDocument::TAG_SCHEMA);
@@ -22,7 +23,7 @@ final class TagSchemaTest extends AbstractTestCase
         $this->assertTrue($schema->hasAttributeTargetNamespace());
     }
 
-    public function testGetTargetNamespaceAttributeValueMustReturnTheTargetNamespaceAttributeValue()
+    public function testGetTargetNamespaceAttributeValueMustReturnTheTargetNamespaceAttributeValue(): void
     {
         /** @var Tag $schema */
         $schema = self::wsdlBingInstance()->getElementByName(AbstractDocument::TAG_SCHEMA);
@@ -30,7 +31,7 @@ final class TagSchemaTest extends AbstractTestCase
         $this->assertSame('http://schemas.microsoft.com/LiveSearch/2008/03/Search', $schema->getTargetNamespaceAttributeValue());
     }
 
-    public function testGetTargetNamespaceMustReturnTheTargetNamespaceAttributeValue()
+    public function testGetTargetNamespaceMustReturnTheTargetNamespaceAttributeValue(): void
     {
         /** @var Tag $schema */
         $schema = self::wsdlBingInstance()->getElementByName(AbstractDocument::TAG_SCHEMA);

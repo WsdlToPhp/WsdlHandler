@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagComplexTypeTest extends AbstractTestCase
 {
-    public function testGetTargetNamespaceMustReturnTheTargetNamespaceAttributeValue()
+    public function testGetTargetNamespaceMustReturnTheTargetNamespaceAttributeValue(): void
     {
         /** @var Tag $complexType */
         $complexType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_COMPLEX_TYPE, [

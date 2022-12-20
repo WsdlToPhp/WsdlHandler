@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagRestrictionTest extends AbstractTestCase
 {
-    public function testIsEnumeration()
+    public function testIsEnumeration(): void
     {
         $wsdl = self::wsdlBingInstance();
         $restrictions = $wsdl->getElementsByName(AbstractDocument::TAG_RESTRICTION);

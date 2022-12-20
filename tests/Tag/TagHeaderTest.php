@@ -14,11 +14,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagHeaderTest extends AbstractTestCase
 {
-    public function testHeaders()
+    public function testHeaders(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -35,7 +36,7 @@ final class TagHeaderTest extends AbstractTestCase
         }
     }
 
-    public function testGetMessage()
+    public function testGetMessage(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -44,7 +45,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertInstanceOf(TagMessage::class, $header->getMessage());
     }
 
-    public function testGetPartMustReturnPartTag()
+    public function testGetPartMustReturnPartTag(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -53,7 +54,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertInstanceOf(TagPart::class, $header->getPartTag());
     }
 
-    public function testGetPartFinalTypeMustReturnFinalType()
+    public function testGetPartFinalTypeMustReturnFinalType(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -62,7 +63,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('CustomSecurityHeaderType', $header->getPartTag()->getFinalType());
     }
 
-    public function testGetPartFinalNamespaceMustReturnFinalNamespace()
+    public function testGetPartFinalNamespaceMustReturnFinalNamespace(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -71,7 +72,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('ns', $header->getPartTag()->getFinalNamespace());
     }
 
-    public function testGetHeaderNamespaceMustReturnNamespace()
+    public function testGetHeaderNamespaceMustReturnNamespace(): void
     {
         $wsdl = self::wsdlEbayInstance();
 
@@ -80,7 +81,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('urn:ebay:apis:eBLBaseComponents', $header->getHeaderNamespace());
     }
 
-    public function testGetHeaderNamespaceMustReturnNamespaceFromSchemaContainingElementMatchingPart()
+    public function testGetHeaderNamespaceMustReturnNamespaceFromSchemaContainingElementMatchingPart(): void
     {
         $wsdl = self::wsdlUnitTestInstance();
 
@@ -89,7 +90,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('http://schemas.com/GetResult', $header->getHeaderNamespace());
     }
 
-    public function testGetAttributeRequiredMustReturnTrueOrFalse()
+    public function testGetAttributeRequiredMustReturnTrueOrFalse(): void
     {
         $wsdl = self::wsdlActonInstance();
 
@@ -116,7 +117,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertTrue($clusterHeader->getAttributeRequired());
     }
 
-    public function testGetHeaderTypeMustReturnHeaderType()
+    public function testGetHeaderTypeMustReturnHeaderType(): void
     {
         $wsdl = self::wsdlActonInstance();
 
@@ -143,7 +144,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('ClusterHeader', $clusterHeader->getHeaderType());
     }
 
-    public function testGetHeaderNameMustReturnHeaderName()
+    public function testGetHeaderNameMustReturnHeaderName(): void
     {
         $wsdl = self::wsdlActonInstance();
 
@@ -170,7 +171,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('ClusterHeader', $clusterHeader->getHeaderName());
     }
 
-    public function testGetHeaderRequiredMustReturnRequiredOrOptional()
+    public function testGetHeaderRequiredMustReturnRequiredOrOptional(): void
     {
         $wsdl = self::wsdlActonInstance();
 
@@ -197,7 +198,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame(TagHeader::REQUIRED_HEADER, $clusterHeader->getHeaderRequired());
     }
 
-    public function testGetAttributeMessageNamespaceMustReturnMessageNamespace()
+    public function testGetAttributeMessageNamespaceMustReturnMessageNamespace(): void
     {
         $wsdl = self::wsdlActonInstance();
 
@@ -224,7 +225,7 @@ final class TagHeaderTest extends AbstractTestCase
         $this->assertSame('tns', $clusterHeader->getAttributeMessageNamespace());
     }
 
-    public function testGetPartsMustReturnPartTags()
+    public function testGetPartsMustReturnPartTags(): void
     {
         $wsdl = self::wsdlActonInstance();
 

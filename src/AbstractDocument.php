@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler;
 
-use DOMElement;
 use WsdlToPhp\DomHandler\AbstractDomDocumentHandler;
 use WsdlToPhp\DomHandler\DomDocumentHandler;
 use WsdlToPhp\DomHandler\ElementHandler;
@@ -83,7 +82,7 @@ abstract class AbstractDocument extends DomDocumentHandler
         return $namespace;
     }
 
-    protected function getElementHandler(DOMElement $element, AbstractDomDocumentHandler $domDocument, int $index = -1): ElementHandler
+    protected function getElementHandler(\DOMElement $element, AbstractDomDocumentHandler $domDocument, int $index = -1): ElementHandler
     {
         $handlerName = Tag::class;
         if (class_exists($elementNameClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst(implode('', array_slice(explode(':', $element->nodeName), -1, 1)))))) {

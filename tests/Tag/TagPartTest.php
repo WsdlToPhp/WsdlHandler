@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagPartTest extends AbstractTestCase
 {
-    public function testGetMatchingElementMustReturnAnElement()
+    public function testGetMatchingElementMustReturnAnElement(): void
     {
         $instance = self::wsdlUnitTestInstance();
 

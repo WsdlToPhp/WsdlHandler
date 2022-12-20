@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagEnumerationTest extends AbstractTestCase
 {
-    public function testGetValueMustReturnTheValue()
+    public function testGetValueMustReturnTheValue(): void
     {
         $schema = self::schemaNumericEnumerationInstance();
         $enumerations = $schema->getElementsByName(AbstractDocument::TAG_ENUMERATION);
@@ -29,7 +30,7 @@ final class TagEnumerationTest extends AbstractTestCase
         }
     }
 
-    public function testGetRestrictionParentTypeMustReturnToken()
+    public function testGetRestrictionParentTypeMustReturnToken(): void
     {
         $schema = self::schemaNumericEnumerationInstance();
         $enumerations = $schema->getElementsByName(AbstractDocument::TAG_ENUMERATION);
@@ -40,7 +41,7 @@ final class TagEnumerationTest extends AbstractTestCase
         }
     }
 
-    public function testGetRestrictionParentMustReturnTheRestrictionTag()
+    public function testGetRestrictionParentMustReturnTheRestrictionTag(): void
     {
         $schema = self::schemaNumericEnumerationInstance();
         $enumerations = $schema->getElementsByName(AbstractDocument::TAG_ENUMERATION);
@@ -51,7 +52,7 @@ final class TagEnumerationTest extends AbstractTestCase
         }
     }
 
-    public function testHasAttributeValueMustReturnTrue()
+    public function testHasAttributeValueMustReturnTrue(): void
     {
         $schema = self::schemaNumericEnumerationInstance();
         $enumerations = $schema->getElementsByName(AbstractDocument::TAG_ENUMERATION);

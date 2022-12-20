@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler;
 
-use DOMNode;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 
 class Wsdl extends AbstractDocument
@@ -45,7 +44,7 @@ class Wsdl extends AbstractDocument
         ], $includeExternals);
     }
 
-    public function getElementsByNameAndAttributes(string $name, array $attributes, ?DOMNode $node = null, bool $includeExternals = false): array
+    public function getElementsByNameAndAttributes(string $name, array $attributes, ?\DOMNode $node = null, bool $includeExternals = false): array
     {
         if ($includeExternals) {
             $elements = $this->useParentMethodAndExternals(__FUNCTION__, [
