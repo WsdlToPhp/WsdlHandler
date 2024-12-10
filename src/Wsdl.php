@@ -91,7 +91,7 @@ class Wsdl extends AbstractDocument
         return $result;
     }
 
-    protected function useExternalSchemas(string $method, array $parameters, $parentResult, bool $returnOne = false)
+    protected function useExternalSchemas(string $method, array $parameters, ?array $parentResult, bool $returnOne = false)
     {
         $result = $parentResult;
 
