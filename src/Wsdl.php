@@ -72,17 +72,14 @@ class Wsdl extends AbstractDocument
     }
 
     /**
-     * Handles any method that exist within the parent class,
+     * Handles any method that exists within the parent class,
      * in addition it handles the case when we want to use the external schemas to search in.
      *
      * @return mixed
      */
     protected function useParentMethodAndExternals(string $method, array $parameters, bool $includeExternals = false, bool $returnOne = false)
     {
-        $result = call_user_func_array([
-            $this,
-            sprintf('parent::%s', $method),
-        ], $parameters);
+        $result = parent::{$method}(...$parameters);
 
         if ($includeExternals && (!$returnOne || empty($result))) {
             $result = $this->useExternalSchemas($method, $parameters, $result, $returnOne);
@@ -96,10 +93,7 @@ class Wsdl extends AbstractDocument
         $result = $parentResult;
 
         foreach ($this->getExternalSchemas() as $externalSchema) {
-            $externalResult = call_user_func_array([
-                $externalSchema,
-                $method,
-            ], $parameters);
+            $externalResult = call_user_func_array([$externalSchema, $method], $parameters);
 
             if ($returnOne && !is_null($externalResult)) {
                 $result = $externalResult;
