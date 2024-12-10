@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.6 - 2024/12/10
+- Add Sonar tools
+- Minor type hinting
+
 ## 1.0.5 - 2022/03/24
 - Update PHP CS Fixer and corresponding setting file
 - Add PHPStan

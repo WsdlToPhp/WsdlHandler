@@ -12,11 +12,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagDocumentationTest extends AbstractTestCase
 {
-    public function testGetSuitableParentMustReturn()
+    public function testGetSuitableParentMustReturn(): void
     {
         $wsdl = self::wsdlImageServiceViewAvailRequestInstance();
         $documentations = $wsdl->getElementsByName(AbstractDocument::TAG_DOCUMENTATION, true);
@@ -48,7 +49,7 @@ final class TagDocumentationTest extends AbstractTestCase
         $this->assertCount($assertCount, $names, sprintf('Unable to find suitable parent named %s', implode(', ', $names)));
     }
 
-    public function testGetSuitableParentAsEnumeration()
+    public function testGetSuitableParentAsEnumeration(): void
     {
         $wsdl = self::wsdlEbayInstance();
         $enumeration = $wsdl->getElementByNameAndAttributes(AbstractDocument::TAG_ENUMERATION, [

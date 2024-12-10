@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagImportTest extends AbstractTestCase
 {
-    public function testGetLocationAttributeValueMustReturnTheSchemaLocation()
+    public function testGetLocationAttributeValueMustReturnTheSchemaLocation(): void
     {
         $wsdl = self::wsdlPartnerInstance();
 

@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagChoiceTest extends AbstractTestCase
 {
-    public function testGetChildrenElementsTagsMustReturnTheListOfTags()
+    public function testGetChildrenElementsTagsMustReturnTheListOfTags(): void
     {
         $this->assertSame([
             'element',
@@ -24,7 +25,7 @@ final class TagChoiceTest extends AbstractTestCase
         ], TagChoice::getChildrenElementsTags());
     }
 
-    public function testGetForbiddenParentTagsMustReturnTheListOfForbiddenParentTags()
+    public function testGetForbiddenParentTagsMustReturnTheListOfForbiddenParentTags(): void
     {
         $this->assertSame([
             'complexType',
@@ -32,7 +33,7 @@ final class TagChoiceTest extends AbstractTestCase
         ], TagChoice::getForbiddenParentTags());
     }
 
-    public function testGetChildrenElementsMustReturnAnArray()
+    public function testGetChildrenElementsMustReturnAnArray(): void
     {
         $wsdl = self::schemaEwsMessagesInstance();
 
@@ -48,7 +49,7 @@ final class TagChoiceTest extends AbstractTestCase
      *   <xs:element name="FractionalPageFolderView" type="t:FractionalPageViewType" />
      *  </xs:choice>.
      */
-    public function testGetChildrenElementsMustReturnDirectChildrenTags()
+    public function testGetChildrenElementsMustReturnDirectChildrenTags(): void
     {
         $wsdl = self::schemaEwsMessagesInstance();
 
@@ -100,7 +101,7 @@ final class TagChoiceTest extends AbstractTestCase
      *   </xs:element>
      *  </xs:choice>.
      */
-    public function testGetChildrenElementsMustReturnNestedChildrenTags()
+    public function testGetChildrenElementsMustReturnNestedChildrenTags(): void
     {
         $wsdl = self::wsdlWhlInstance();
 
@@ -177,7 +178,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:complexType>
      * </xs:element>.
      */
-    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelDescriptiveInfoRs()
+    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelDescriptiveInfoRs(): void
     {
         $wsdl = self::wsdlWhlInstance();
 
@@ -250,7 +251,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:complexType>
      * </xs:element>.
      */
-    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelAvailRs()
+    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfHotelAvailRs(): void
     {
         $wsdl = self::wsdlWhlInstance();
 
@@ -292,7 +293,7 @@ final class TagChoiceTest extends AbstractTestCase
      * </xs:complexType>
      * </xs:element>.
      */
-    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfDetails()
+    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfDetails(): void
     {
         $wsdl = self::wsdlDeliveryServiceInstance();
 

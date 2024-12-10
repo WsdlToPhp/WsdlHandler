@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagMessageTest extends AbstractTestCase
 {
-    public function testGetPart()
+    public function testGetPart(): void
     {
         $wsdl = self::wsdlEbayInstance();
 

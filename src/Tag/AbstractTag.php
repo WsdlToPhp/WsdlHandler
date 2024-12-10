@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler\Tag;
 
-use DOMElement;
 use WsdlToPhp\DomHandler\AbstractAttributeHandler as Attribute;
 use WsdlToPhp\DomHandler\AbstractNodeHandler;
 use WsdlToPhp\DomHandler\ElementHandler;
@@ -31,10 +30,10 @@ abstract class AbstractTag extends ElementHandler
         if ($this->getParent() instanceof AbstractNodeHandler) {
             $parentTags = $strict ? $additionalTags : $this->getSuitableParentTags($additionalTags);
             $parentNode = $this->getParent()->getNode();
-            while ($maxDeep-- > 0 && ($parentNode instanceof DOMElement) && !empty($parentNode->nodeName) && (!preg_match('/'.implode('|', $parentTags).'/i', $parentNode->nodeName) || ($checkName && preg_match('/'.implode('|', $parentTags).'/i', $parentNode->nodeName) && (!$parentNode->hasAttribute('name') || '' === $parentNode->getAttribute('name'))))) {
+            while ($maxDeep-- > 0 && ($parentNode instanceof \DOMElement) && !empty($parentNode->nodeName) && (!preg_match('/'.implode('|', $parentTags).'/i', $parentNode->nodeName) || ($checkName && preg_match('/'.implode('|', $parentTags).'/i', $parentNode->nodeName) && (!$parentNode->hasAttribute('name') || '' === $parentNode->getAttribute('name'))))) {
                 $parentNode = $parentNode->parentNode;
             }
-            if ($parentNode instanceof DOMElement) {
+            if ($parentNode instanceof \DOMElement) {
                 $parentNode = $this->getDomDocumentHandler()->getHandler($parentNode);
             } else {
                 $parentNode = null;

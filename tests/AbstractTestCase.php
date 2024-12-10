@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\WsdlHandler\Tests;
 
-use DOMDocument;
 use PHPUnit\Framework\TestCase as PHPUnitFrameworkTestCase;
 use WsdlToPhp\WsdlHandler\Schema;
 use WsdlToPhp\WsdlHandler\Wsdl;
@@ -210,9 +209,9 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
 
     public static function getWsdl(string $wsdlPath, bool $addExternalSchemas = true): Wsdl
     {
-        $wsdlKey = sprintf('%s_%s', $wsdlPath, ((int) $addExternalSchemas));
+        $wsdlKey = sprintf('%s_%s', $wsdlPath, (int) $addExternalSchemas);
         if (!array_key_exists($wsdlKey, self::$instances)) {
-            $doc = new DOMDocument('1.0', 'utf-8');
+            $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load($wsdlPath);
             self::$instances[$wsdlKey] = new Wsdl($doc);
         }
@@ -223,7 +222,7 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
     public static function getSchema(string $schemaPath): Schema
     {
         if (!array_key_exists($schemaPath, self::$instances)) {
-            $doc = new DOMDocument('1.0', 'utf-8');
+            $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load($schemaPath);
             self::$instances[$schemaPath] = new Schema($doc);
         }

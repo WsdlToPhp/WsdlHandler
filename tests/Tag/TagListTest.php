@@ -10,11 +10,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagListTest extends AbstractTestCase
 {
-    public function testGetItemTypeMustReturnIntForExistingItemTypeAttribute()
+    public function testGetItemTypeMustReturnIntForExistingItemTypeAttribute(): void
     {
         $wsdl = self::wsdlOdigeoInstance();
 
@@ -29,7 +30,7 @@ final class TagListTest extends AbstractTestCase
         }
     }
 
-    public function testGetItemTypeMustReturnCorrespondingValueFromRestrictionChildOrItemType()
+    public function testGetItemTypeMustReturnCorrespondingValueFromRestrictionChildOrItemType(): void
     {
         $wsdl = self::schemaEwsTypesInstance();
         $lists = $wsdl->getElementsByName(AbstractDocument::TAG_LIST);

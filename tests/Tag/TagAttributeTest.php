@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagAttributeTest extends AbstractTestCase
 {
-    public function testGetSuitableParentAsAttributeGroupMustReturnAttributeGroupParent()
+    public function testGetSuitableParentAsAttributeGroupMustReturnAttributeGroupParent(): void
     {
         $schema = self::wsdlWhlInstance();
 

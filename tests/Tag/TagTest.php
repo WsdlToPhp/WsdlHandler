@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagTest extends AbstractTestCase
 {
-    public function testGetFirstRestrictionChildMustReturnTheRestrictionTag()
+    public function testGetFirstRestrictionChildMustReturnTheRestrictionTag(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -25,7 +26,7 @@ final class TagTest extends AbstractTestCase
         $this->assertInstanceOf(TagRestriction::class, $simpleType->getFirstRestrictionChild());
     }
 
-    public function testHasRestrictionChildMustReturnTrue()
+    public function testHasRestrictionChildMustReturnTrue(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -35,7 +36,7 @@ final class TagTest extends AbstractTestCase
         $this->assertTrue($simpleType->hasRestrictionChild());
     }
 
-    public function testIsTheParentMustReturnFalse()
+    public function testIsTheParentMustReturnFalse(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -45,7 +46,7 @@ final class TagTest extends AbstractTestCase
         $this->assertFalse($simpleType->isTheParent($simpleType));
     }
 
-    public function testIsTheParentMustReturnTrue()
+    public function testIsTheParentMustReturnTrue(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -55,7 +56,7 @@ final class TagTest extends AbstractTestCase
         $this->assertTrue($simpleType->getFirstRestrictionChild()->isTheParent($simpleType));
     }
 
-    public function testHasAttributeNameReturnTrue()
+    public function testHasAttributeNameReturnTrue(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -65,7 +66,7 @@ final class TagTest extends AbstractTestCase
         $this->assertTrue($simpleType->hasAttributeName());
     }
 
-    public function testHasAttributeNameReturnFalse()
+    public function testHasAttributeNameReturnFalse(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -75,7 +76,7 @@ final class TagTest extends AbstractTestCase
         $this->assertFalse($simpleType->getFirstRestrictionChild()->hasAttributeName());
     }
 
-    public function testHasAttributeRefReturnFalse()
+    public function testHasAttributeRefReturnFalse(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [
@@ -85,7 +86,7 @@ final class TagTest extends AbstractTestCase
         $this->assertFalse($simpleType->hasAttributeRef());
     }
 
-    public function testHasAttributeValueReturnFalse()
+    public function testHasAttributeValueReturnFalse(): void
     {
         /** @var Tag $simpleType */
         $simpleType = self::wsdlBingInstance()->getElementByNameAndAttributes(AbstractDocument::TAG_SIMPLE_TYPE, [

@@ -11,11 +11,12 @@ use WsdlToPhp\WsdlHandler\Tests\AbstractTestCase;
 
 /**
  * @internal
+ *
  * @coversDefaultClass
  */
 final class TagAttributeGroupTest extends AbstractTestCase
 {
-    public function testGetAttributeRefMustReturnRefAttributeValueFromAttributeGroup()
+    public function testGetAttributeRefMustReturnRefAttributeValueFromAttributeGroup(): void
     {
         $wsdl = self::wsdlWhlInstance();
         $attributeGroups = $wsdl->getElementsByName(AbstractDocument::TAG_ATTRIBUTE_GROUP);
@@ -136,7 +137,7 @@ final class TagAttributeGroupTest extends AbstractTestCase
         }
     }
 
-    public function testGetAttributeNameMustReturnNameAttributeValueFromAttributeGroup()
+    public function testGetAttributeNameMustReturnNameAttributeValueFromAttributeGroup(): void
     {
         $wsdl = self::wsdlWhlInstance();
         $attributeGroups = $wsdl->getElementsByName(AbstractDocument::TAG_ATTRIBUTE_GROUP);
@@ -190,7 +191,7 @@ final class TagAttributeGroupTest extends AbstractTestCase
         }
     }
 
-    public function testGetReferencingElementsMustReturnReferencingElementsFromAttributeGroup()
+    public function testGetReferencingElementsMustReturnReferencingElementsFromAttributeGroup(): void
     {
         $wsdl = self::wsdlWhlInstance();
         $attributeGroups = $wsdl->getElementsByName(AbstractDocument::TAG_ATTRIBUTE_GROUP);
