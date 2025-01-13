@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.7 - 2025/01/13
+- issue #5, pr #6 - fix call to parent class
+
 ## 1.0.6 - 2024/12/10
 - Add Sonar tools
 - Minor type hinting
